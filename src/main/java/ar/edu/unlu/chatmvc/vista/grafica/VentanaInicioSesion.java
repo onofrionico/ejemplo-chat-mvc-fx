@@ -129,6 +129,15 @@ public class VentanaInicioSesion {
         });
 
         // ---------------------------------------------------------
+        // Cargar la hoja de estilos CSS
+        // getResource() busca en el classpath; Maven copia
+        // src/main/resources/ a la raiz del classpath automaticamente.
+        // ---------------------------------------------------------
+        scene.getStylesheets().add(
+            getClass().getResource("/styles/chat.css").toExternalForm()
+        );
+
+        // ---------------------------------------------------------
         // Configurar el Stage (la ventana del SO)
         // ---------------------------------------------------------
         stage.setTitle("Chat - Inicio de Sesion");

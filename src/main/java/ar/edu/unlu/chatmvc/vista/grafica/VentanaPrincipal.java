@@ -108,6 +108,7 @@ public class VentanaPrincipal {
         textChat = new TextArea();
         textChat.setEditable(false);    // el usuario no puede escribir aqui
         textChat.setWrapText(true);     // quiebre de linea automatico
+        textChat.setId("chat-area");    // ID para el selector CSS #chat-area
         HBox.setHgrow(textChat, Priority.ALWAYS);  // ocupa el ancho disponible
 
         // ---------------------------------------------------------
@@ -152,6 +153,12 @@ public class VentanaPrincipal {
         // Scene y Stage
         // ---------------------------------------------------------
         Scene scene = new Scene(root, 500, 350);
+
+        // Cargar la hoja de estilos CSS desde el classpath
+        scene.getStylesheets().add(
+            getClass().getResource("/styles/chat.css").toExternalForm()
+        );
+
         stage.setTitle("Chat");
         stage.setScene(scene);
 
