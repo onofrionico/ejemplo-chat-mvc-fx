@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ar.edu.unlu</groupId>
+    <artifactId>chat-mvc-fx</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Usamos Java 18 para que coincida con el entorno del alumno -->
+        <maven.compiler.release>18</maven.compiler.release>
+        <!-- Version de JavaFX que coincide con Java 18 -->
+        <javafx.version>18.0.2</javafx.version>
+    </properties>
+
+    <dependencies>
+        <!--
+            javafx-controls incluye todos los controles visuales de JavaFX:
+            Button, TextField, ListView, TextArea, Label, etc.
+            Maven descarga automaticamente el JAR correcto para el SO actual
+            (Windows, macOS, Linux) gracias al "classifier" de la plataforma.
+        -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Plugin estandar de compilacion de Maven -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <release>18</release>
+                </configuration>
+            </plugin>
+
+            <!--
+                javafx-maven-plugin: permite ejecutar la app con "mvn javafx:run"
+                Este plugin se encarga de agregar JavaFX al module-path
+                automaticamente, sin necesidad de un module-info.java.
+                Equivalente a ejecutar con:
+                  java --module-path /ruta/javafx --add-modules javafx.controls ...
+            -->
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <mainClass>ar.edu.unlu.chatmvc.pruebas.Prueba</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
