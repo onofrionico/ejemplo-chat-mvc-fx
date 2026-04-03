@@ -43,14 +43,6 @@
                     <release>18</release>
                 </configuration>
             </plugin>
-
-            <!--
-                javafx-maven-plugin: permite ejecutar la app con "mvn javafx:run"
-                Este plugin se encarga de agregar JavaFX al module-path
-                automaticamente, sin necesidad de un module-info.java.
-                Equivalente a ejecutar con:
-                  java --module-path /ruta/javafx --add-modules javafx.controls ...
-            -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>

@@ -13,3 +13,8 @@ target/
 
 # VS Code
 .vscode/
+
+# Archivos del proyecto original (reemplazados por src/main/java/)
+src/ar/
+miglayout15-swing.jar
+miglayout-src.zip
