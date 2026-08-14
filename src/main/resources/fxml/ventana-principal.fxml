@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<!--
+    Version FXML de VentanaPrincipal.java (Bloque 1 y 2 del tutorial).
+    No tiene fx:controller: se asigna programaticamente desde
+    VentanaPrincipalFXML.java via loader.setController(this).
+-->
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+    <center>
+        <HBox spacing="0.0">
+            <padding>
+                <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+            </padding>
+            <TextArea fx:id="textChat" id="chat-area" editable="false" wrapText="true"
+                      HBox.hgrow="ALWAYS" />
+            <VBox spacing="4.0">
+                <padding>
+                    <Insets left="6.0" />
+                </padding>
+                <Label text="Usuarios conectados:" />
+                <ListView fx:id="listUsuarios" prefWidth="130.0" VBox.vgrow="ALWAYS" />
+            </VBox>
+        </HBox>
+    </center>
+    <bottom>
+        <HBox spacing="6.0">
+            <padding>
+                <Insets bottom="6.0" left="6.0" right="6.0" />
+            </padding>
+            <TextField fx:id="textMensaje" promptText="Escribi tu mensaje..."
+                       HBox.hgrow="ALWAYS" />
+            <Button fx:id="btnEnviar" text="Enviar" />
+        </HBox>
+    </bottom>
+</BorderPane>
