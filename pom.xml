@@ -30,6 +30,15 @@
             <artifactId>javafx-controls</artifactId>
             <version>${javafx.version}</version>
         </dependency>
+        <!--
+            javafx-fxml agrega FXMLLoader y la anotacion @FXML, necesarios
+            para cargar vistas armadas con Scene Builder (Bloque 3 del tutorial).
+        -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
