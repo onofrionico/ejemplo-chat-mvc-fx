@@ -162,3 +162,21 @@ Se abrirán **dos ventanas de inicio de sesión** (dos clientes de prueba que co
 | Evento de cierre | `WindowAdapter.windowClosing()` | `stage.setOnCloseRequest()` |
 | Hilo de UI | `SwingUtilities.invokeLater()` | `Platform.runLater()` |
 | Estilos | Propiedades Java (`.setBackground()`) | CSS con propiedades `-fx-` |
+
+---
+
+## Versión alternativa con FXML (Scene Builder)
+
+Además de la vista escrita a mano (`vista.grafica`), el proyecto incluye una segunda implementación completa de `IVista` basada en FXML: `vista.grafica.fxml`. Corre el mismo chat de dos ventanas, sin ningún cambio en `Controlador` ni `Modelo` — es la prueba en código real de que separar en capas permite intercambiar la vista.
+
+Correrla:
+
+```bash
+mvn javafx:run -Djavafx.mainClass=ar.edu.unlu.chatmvc.pruebas.PruebaFXML
+```
+
+También existe un ejemplo standalone más simple (una sola ventana de login, sin conectar al chat real) en `vista.scenebuilderdemo`, pensado para la demo en vivo del Bloque 3 del tutorial:
+
+```bash
+mvn javafx:run -Djavafx.mainClass=ar.edu.unlu.chatmvc.scenebuilderdemo.DemoSceneBuilder
+```
